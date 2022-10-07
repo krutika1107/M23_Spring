@@ -6,29 +6,32 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 @Service
 @Transactional
-public class CollegeService {
+public class CollegeService 
+{
 	@Autowired
 	private CollegeRepository repo;
-	//to retrieve a data
+	
+	//To retrieve all data of college class
 	public List<College> listAll() {
-		
 		return repo.findAll();
 	}
-	//to retrieve a specific row
-	public College get(Integer id) {
-		
-		return repo.findById(id).get();
+	//Insert/create/update a data
+	public void create(College c)
+	{
+		repo.save(c);
 	}
-	//create
-	public void save(College college) {
-		 repo.save(college);
-		
+	//To retrieve a single Data
+	public College retrieve(Integer collegeid)
+	{
+		return repo.findById(collegeid).get();
 	}
-	public void delete(Integer id) {
-		repo.deleteById(id);
-		
+	//To delete a data
+	public void delete(Integer collegeid)
+	{
+		repo.deleteById(collegeid);
 	}
 
 }

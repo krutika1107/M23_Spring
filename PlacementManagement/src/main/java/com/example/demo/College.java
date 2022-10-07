@@ -1,67 +1,71 @@
 package com.example.demo;
 
-import java.io.Serializable;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-@Entity
-@Table(name="college")
 
-public class College implements Serializable{
-	private static final long serialVersionUID=1L;
+@Entity
+public class College
+{
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
-	//@Column(name="ID")
-	private long id;
-	private int collegeadmin;
+	private Integer collegeid;
 	private String collegename;
 	private String location;
+	
+	
 	public College() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
-	public College(long id, int collegeadmin, String collegename, String location) {
+
+
+	public College(Integer collegeid, String collegename, String location) {
 		super();
-		this.id = id;
-		this.collegeadmin = collegeadmin;
+		this.collegeid = collegeid;
 		this.collegename = collegename;
 		this.location = location;
 	}
-	public long getId() {
-		return id;
+
+
+	public Integer getCollegeid() {
+		return collegeid;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+
+	public void setCollegeid(Integer collegeid) {
+		this.collegeid = collegeid;
 	}
-	public int getCollegeAdmin() {
-		return collegeadmin;
-	}
-	public void setCollegeAdmin(int collegeadmin) {
-		this.collegeadmin = collegeadmin;
-	}
-	public String getCollegeName() {
+
+
+	public String getCollegename() {
 		return collegename;
 	}
-	public void setCollegeName(String collegename) {
+
+
+	public void setCollegename(String collegename) {
 		this.collegename = collegename;
 	}
+
+
 	public String getLocation() {
 		return location;
 	}
+
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
+
 	@Override
 	public String toString() {
-		return "College [collegename=" + collegename + "]";
+		return "College [collegeid=" + collegeid + ", collegename=" + collegename + ", location=" + location + "]";
 	}
 	
-
 }
+	
+	
+	
+
+	
+	
+	
